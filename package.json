@@ -4,8 +4,9 @@
   "description": "REACT100 Assignment - Change Calculator",
   "main": "server/index.js",
   "scripts": {
-    "build": "webpack --mode development",
+    "build": "npm run less && webpack --mode development",
     "start": "webpack --mode development && node server/index.js",
+    "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
   },
