@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Inputs from './components/inputs';
 
 class App extends Component {
   constructor(props) {
@@ -98,50 +99,12 @@ class App extends Component {
       <div className='container'>
         <h1>Change Calculator</h1>
         <hr className='border-white' />
-        <div className='row'>
-          <div className='col-md-4'>
-            <div className='card' id='inputs-card'>
-              <div className='card-header'>
-                <h5>Enter information</h5>
-              </div>
-              <div className='card-body'>
-                <form>
-                  <div className='form-group'>
-                    <label>
-                      <p>How much is due?</p>
-                      <input
-                        id='amount-due'
-                        name='amountDue'
-                        type='number'
-                        step='0.01'
-                        onChange={ this.handleAmountDue }
-                      />
-                    </label>
-                  </div>
-                  <div className='form-group'>
-                    <label>
-                      <p>How much was received?</p>
-                      <input
-                        id='amount-received'
-                        name='amountReceived'
-                        type='number'
-                        step='0.01'
-                        onChange={ this.handleAmountReceived }
-                      />
-                    </label>
-                  </div>
-                </form>
-              </div>
-              <div className='card-footer'>
-                <button
-                  id='calculate'
-                  className='btn btn-primary btn-block'
-                  onClick={ this.handleClick }
-                >Calculate
-                </button>
-              </div>
-            </div>
-          </div>
+        <div id='box'>
+          <Inputs
+            handleAmountDue={ this.handleAmountDue }
+            handleAmountReceived={ this.handleAmountReceived }
+            handleClick={ this.handleClick }
+          />
           <div id='output' className='col-md-8'>
             <div className='card'>
               <div className='card-header'>
