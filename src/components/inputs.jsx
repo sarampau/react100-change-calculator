@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 
 class Inputs extends Component {
   render() {
@@ -12,7 +13,7 @@ class Inputs extends Component {
             <p>How much is due?</p>
             <input
               id='amount-due'
-              name='amountDue'
+              className='amountDue'
               type='number'
               step='0.01'
               onChange={ this.props.handleAmountDue }
@@ -22,7 +23,7 @@ class Inputs extends Component {
             <p>How much was received?</p>
             <input
               id='amount-received'
-              name='amountReceived'
+              className='amountReceived'
               type='number'
               step='0.01'
               onChange={ this.props.handleAmountReceived }
@@ -31,6 +32,7 @@ class Inputs extends Component {
         </main>
         <footer id='card-footer'>
           <button
+            className='btn.button'
             id='calculate'
             onClick={ this.props.handleClick }
           >Calculate
@@ -40,5 +42,11 @@ class Inputs extends Component {
     );
   }
 }
+
+Inputs.propTypes = {
+  handleAmountDue: React.PropTypes.func,
+  handleAmountReceived: React.PropTypes.func,
+  handleClick: React.PropTypes.func
+};
 
 export default Inputs;

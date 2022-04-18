@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Inputs from './components/inputs';
+import Outputs from './components/outputs';
 
 class App extends Component {
   constructor(props) {
@@ -95,6 +96,7 @@ class App extends Component {
   }
 
   render() {
+    const { change, twenties, tens, fives, ones, quarters, dimes, nickels, pennies } = this.state;
     return (
       <div className='container'>
         <h1>Change Calculator</h1>
@@ -105,71 +107,17 @@ class App extends Component {
             handleAmountReceived={ this.handleAmountReceived }
             handleClick={ this.handleClick }
           />
-          <div id='output' className='col-md-8'>
-            <div className='card'>
-              <div className='card-header'>
-                <h5
-                  id='change'
-                  className='alert alert-success text-center'
-                >The total change due is ${this.state.change}
-                </h5>
-              </div>
-              <div className='card-body'>
-                <div className='row'>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='twenties-output'>
-                      <h5 className='card-title text-center'>Twenties</h5>
-                      <p className='text-center'>{this.state.twenties}</p>
-                    </div>
-                  </div>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='tens-output'>
-                      <h5 className='card-title text-center'>Tens</h5>
-                      <p className='text-center'>{this.state.tens}</p>
-                    </div>
-                  </div>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='fives-output'>
-                      <h5 className='card-title text-center'>Fives</h5>
-                      <p className='text-center'>{this.state.fives}</p>
-                    </div>
-                  </div>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='ones-output'>
-                      <h5 className='card-title text-center'>Ones</h5>
-                      <p className='text-center'>{this.state.ones}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='quarters-output'>
-                      <h5 className='card-title text-center'>Quarters</h5>
-                      <p className='text-center'>{this.state.quarters}</p>
-                    </div>
-                  </div>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='dimes-output'>
-                      <h5 className='card-title text-center'>Dimes</h5>
-                      <p className='text-center'>{this.state.dimes}</p>
-                    </div>
-                  </div>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='nickels-output'>
-                      <h5 className='card-title text-center'>Nickels</h5>
-                      <p className='text-center'>{this.state.nickels}</p>
-                    </div>
-                  </div>
-                  <div className='col-md-3'>
-                    <div className='card card-block shadow p-3 mb-3' id='pennies-output'>
-                      <h5 className='card-title text-center'>Pennies</h5>
-                      <p className='text-center'>{this.state.pennies}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Outputs
+            change={ change }
+            twenties={ twenties }
+            tens={ tens }
+            fives={ fives }
+            ones={ ones }
+            quarters={ quarters }
+            dimes={ dimes }
+            nickels={ nickels }
+            pennies={ pennies }
+          />
         </div>
       </div>
     );
