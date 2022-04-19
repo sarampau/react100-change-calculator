@@ -4,9 +4,9 @@ class Outputs extends Component {
   render() {
     return (
       <div id='outputs'>
-        <header id='outputs-header'>
+        <div id='outputs-header' className='alert alert-success'>
           <h5 id='total-change'>The total change due is ${this.props.change}</h5>
-        </header>
+        </div>
         <div className='card-body'>
           <div className='row'>
             <div className='denom-output'>
